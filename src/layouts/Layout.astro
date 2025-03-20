@@ -1,22 +1,765 @@
+---
+import "../styles/global.css";
+import Button from "../components/Button.astro";
+import { Image } from "astro:assets";
+import logoImage from "../assets/images/Discount-landscapers-las-vegas-llc.svg";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Discount Landscaper LV | Las Vegas' Premier Artificial Turf & Paver Specialists",
+  description = "Professional landscaping services in Las Vegas including artificial turf, pavers, hardscaping, and more. Serving Las Vegas for over 15 years.",
+} = Astro.props;
+
+// Define interfaces for navigation items
+interface NavDropdownItem {
+  name: string;
+  path: string;
+}
+
+interface NavItem {
+  name: string;
+  path: string;
+  hasDropdown?: boolean;
+  dropdownItems?: NavDropdownItem[];
+}
+
+const navItems: NavItem[] = [
+  { name: "Home", path: "/" },
+  {
+    name: "Services",
+    path: "/services",
+    hasDropdown: true,
+    dropdownItems: [
+      { name: "Landscape Design", path: "/services/landscape-design" },
+      {
+        name: "Artificial Turf",
+        path: "/services/artificial-turf-installation",
+      },
+      { name: "Paver Installation", path: "/services/paver-installation" },
+      { name: "Hardscaping", path: "/services/hardscaping" },
+    ],
+  },
+  { name: "About", path: "/about" },
+  { name: "Contact", path: "/get-in-touch" },
+];
+
+const currentPath = Astro.url.pathname;
+
+// Function to check if a path is active or its child is active
+const isActiveOrHasActiveChild = (item: NavItem): boolean => {
+  if (currentPath === item.path) return true;
+  if (item.hasDropdown && item.dropdownItems) {
+    return item.dropdownItems.some((child) => currentPath === child.path);
+  }
+  return false;
+};
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#6fbcc7" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+    <!-- Preload critical assets -->
+    <link
+      rel="preload"
+      href="/fonts/Poppins-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Poppins-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Poppins-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preconnect"
+      href="https://phpstack-186938-5338275.cloudwaysapps.com"
+      crossorigin
+    />
+    <link
+      rel="dns-prefetch"
+      href="https://phpstack-186938-5338275.cloudwaysapps.com"
+    />
+
+    <!-- Add mobile optimization meta tags -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Inline critical CSS -->
+    <style>
+      /* Critical CSS for above-the-fold content */
+      :root {
+        --primary: #6fbcc7;
+        --secondary: #627479;
+        --accent: #ff7540;
+        --darkprimary: #384447;
+        --text-primary: #384447;
+        --header-height: 100px;
+      }
+
+      body {
+        font-family:
+          "Poppins",
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        margin: 0;
+        padding: 0;
+        color: var(--text-primary);
+        font-size: 16px;
+        line-height: 1.5;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .notification-strip {
+        background-color: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        font-weight: 600;
+        font-size: 0.875rem;
+      }
+
+      #main-header {
+        background-color: white;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        height: var(--header-height);
+        display: flex;
+        align-items: center;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .flex {
+        display: flex;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .justify-between {
+        justify-content: space-between;
+      }
+      .hidden {
+        display: none;
+      }
+
+      @media (min-width: 1024px) {
+        .lg\:flex {
+          display: flex;
+        }
+        .lg\:hidden {
+          display: none;
+        }
+        .hidden.lg\:flex {
+          display: flex;
+        }
+      }
+
+      /* Font loading optimization */
+      @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('/fonts/Poppins-Regular.woff2') format('woff2');
+      }
+      
+      @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url('/fonts/Poppins-Medium.woff2') format('woff2');
+      }
+      
+      @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url('/fonts/Poppins-Bold.woff2') format('woff2');
+      }
+
+      /* Base styles */
+      html {
+        font-family: 'Poppins', system-ui, sans-serif;
+        background: #fff;
+        overflow-x: hidden;
+      }
+      
+      body {
+        margin: 0;
+        padding: 0;
+        color: #333;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      main {
+        flex: 1;
+      }
+      
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      /* Container */
+      /* Mobile performance optimizations */
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 1.25rem;
+        }
+        
+        /* Reduce animation complexity on mobile */
+        * {
+          transition-duration: 0.15s !important;
+          animation-duration: 0.15s !important;
+        }
+      }
+
+      /* Desktop dropdown styles */
+      .desktop-dropdown {
+        position: absolute;
+        top: 100%;
+        left: -1rem;
+        width: 14rem;
+        background-color: white;
+        border-radius: 0.375rem;
+        box-shadow:
+          0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease,
+          visibility 0s linear 0.2s;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        z-index: 50;
+      }
+
+      .desktop-dropdown-item {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        color: var(--darkprimary);
+        position: relative;
+        transition:
+          color 0.2s ease,
+          background-color 0.2s ease;
+      }
+
+      .desktop-dropdown-item:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      /* Mobile menu styles */
+      .mobile-menu {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 40;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .mobile-menu-content {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 80%;
+        max-width: 24rem;
+        background-color: white;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 50;
+        overflow-y: auto;
+      }
+
+      .mobile-dropdown {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
+      }
+
+      .mobile-menu-item {
+        padding: 0.25rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      /* Mobile menu item spacing */
+
+      @media (min-width: 1024px) {
+        .mobile-menu-item {
+          padding: 0.75rem 0;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+      }
+
+      .mobile-menu-item:first-child {
+        padding-top: 0;
+      }
+
+      /* Button styles */
+      .quote-button {
+        display: inline-block;
+        background-color: var(--accent);
+        color: white;
+        font-weight: 500;
+        padding: 0.75rem 1.5rem;
+        border-radius: 2rem;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+      }
+
+      .quote-button:hover {
+        background-color: #5da7b2;
+      }
+
+      .quote-button.block {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+
+      .phone-number {
+        display: flex;
+        align-items: center;
+        font-size: 1.125rem;
+        transition: color 0.2s ease;
+      }
+      
+      @media (max-width: 1023px) {
+        .phone-number {
+          display: none;
+        }
+      }
+    </style>
+
+    <!-- Defer non-critical CSS -->
+    <link
+      rel="stylesheet"
+      href="/styles.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="/styles.css" />
+    </noscript>
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="notification-strip">
+      Serving All Areas of Las Vegas, North Las Vegas, Summerlin and Henderson
+    </header>
+
+    <main>
+      <div id="main-header">
+        <div class="container flex items-center justify-between">
+          <a href="/" class="flex items-center">
+            <Image
+              src={logoImage}
+              alt="Discount Landscaper Las Vegas"
+              width={240}
+              height={75}
+              loading="eager"
+              decoding="async"
+            />
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:flex items-center space-x-8">
+            {
+              navItems.map((item) => (
+                <div class="relative nav-item">
+                  {item.hasDropdown ? (
+                    <div
+                      class={`cursor-pointer text-darkprimary hover:text-primary transition-colors duration-200 flex items-center gap-1 py-8 ${isActiveOrHasActiveChild(item) ? "text-primary" : ""}`}
+                    >
+                      {item.name}
+                      <svg
+                        class="w-4 h-4 dropdown-arrow"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
+                  ) : (
+                    <a
+                      href={item.path}
+                      class={`text-darkprimary hover:text-primary transition-colors duration-200 flex items-center gap-1 py-8 ${isActiveOrHasActiveChild(item) ? "text-primary" : ""}`}
+                    >
+                      {item.name}
+                    </a>
+                  )}
+
+                  {item.hasDropdown && (
+                    <div class="desktop-dropdown">
+                      {item.dropdownItems?.map((dropdownItem) => (
+                        <a
+                          href={dropdownItem.path}
+                          class="desktop-dropdown-item"
+                        >
+                          {dropdownItem.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))
+            }
+            <a href="tel:7254750550" class="phone-number text-accent hover:text-darkprimary font-bold mr-4">
+              (725) 475-0550
+            </a>
+            <a href="/quote" class="quote-button">Get Free Quote</a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-button"
+            class="lg:hidden p-2 text-darkprimary hover:text-primary transition-colors duration-200"
+            aria-label="Toggle mobile menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="mobile-menu">
+        <div id="mobile-menu-content" class="mobile-menu-content">
+          <div class="p-6">
+            <button
+              id="close-mobile-menu"
+              class="absolute top-4 right-4 text-darkprimary hover:text-primary transition-colors duration-200"
+              aria-label="Close mobile menu"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+
+            <div class="flex justify-center mb-6">
+              <Image
+                src={logoImage}
+                alt="Discount Landscaper Las Vegas"
+                width={150}
+                height={50}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <nav class="mt-4">
+              {
+                navItems.map((item, index) => (
+                  <div class="mobile-menu-item">
+                    <div class="flex items-center justify-between">
+                      {item.hasDropdown ? (
+                        <span
+                          class={`text-lg font-medium ${
+                            isActiveOrHasActiveChild(item)
+                              ? "text-primary"
+                              : "text-darkprimary"
+                          } transition-colors duration-200`}
+                        >
+                          {item.name}
+                        </span>
+                      ) : (
+                        <a
+                          href={item.path}
+                          class={`text-lg font-medium ${
+                            isActiveOrHasActiveChild(item)
+                              ? "text-primary"
+                              : "text-darkprimary hover:text-primary"
+                          } transition-colors duration-200`}
+                        >
+                          {item.name}
+                        </a>
+                      )}
+
+                      {item.hasDropdown && (
+                        <button
+                          class="mobile-dropdown-toggle p-2 -mr-2 text-darkprimary hover:text-primary transition-colors duration-200"
+                          aria-label={`Toggle ${item.name} submenu`}
+                        >
+                          <svg
+                            class="w-4 h-4 transform transition-transform duration-200"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </button>
+                      )}
+                    </div>
+                    {item.hasDropdown && (
+                      <div class="mobile-dropdown lg:ml-4 lg:mt-2">
+                        {item.dropdownItems?.map((dropdownItem) => (
+                          <a
+                            href={dropdownItem.path}
+                            class="block text-secondary hover:text-primary transition-colors duration-200 py-1 px-4 relative hover:bg-gray-50 rounded"
+                          >
+                            <span class="relative z-10">
+                              {dropdownItem.name}
+                            </span>
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))
+              }
+            </nav>
+
+            <div class="mt-8">
+              <a href="tel:7254750550" class="block text-center text-lg font-medium text-darkprimary mb-4">
+                (725) 475-0550
+              </a>
+              <a href="/quote" class="quote-button block">Get Free Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <slot />
+    </main>
+
+    <footer class="bg-secondary text-white py-12">
+      <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div>
+            <a href="/" class="flex items-center">
+              <Image
+                src={logoImage}
+                alt="Discount Landscaper Las Vegas"
+                width={180}
+                height={60}
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <p class="mt-4">
+              Professional landscaping services in Las Vegas. Specializing in
+              artificial turf, pavers, and complete yard renovations.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+            <nav class="space-y-2">
+              {
+                navItems.map((item) => (
+                  <div>
+                    <a
+                      href={item.path}
+                      class="hover:text-primary transition-colors duration-200"
+                    >
+                      {item.name}
+                    </a>
+                  </div>
+                ))
+              }
+            </nav>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+            <div class="space-y-2">
+              <p>Phone: <a href="tel:7254750550" class="hover:text-primary transition-colors duration-200">(725) 475-0550</a></p>
+              <p>Email: info@discountlandscaperlv.com</p>
+              <p>Las Vegas, NV</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+          <p>
+            &copy; {new Date().getFullYear()} Discount Landscaper LV. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      // Use a more efficient script loading approach
+      document.addEventListener("DOMContentLoaded", function () {
+        // Desktop navigation dropdown - optimized with fewer DOM operations
+        const navItems = document.querySelectorAll(".nav-item");
+        
+        // Use event delegation for better performance
+        document.querySelector("nav").addEventListener("mouseenter", function(e) {
+          const item = e.target.closest(".nav-item");
+          if (!item) return;
+          
+          const dropdown = item.querySelector(".desktop-dropdown");
+          if (!dropdown) return;
+          
+          dropdown.style.opacity = "1";
+          dropdown.style.visibility = "visible";
+          dropdown.style.transform = "translateY(0)";
+          dropdown.style.transitionDelay = "0s";
+
+          // Rotate arrow
+          const arrow = item.querySelector(".dropdown-arrow");
+          if (arrow) arrow.style.transform = "rotate(180deg)";
+        }, true);
+        
+        document.querySelector("nav").addEventListener("mouseleave", function(e) {
+          const item = e.target.closest(".nav-item");
+          if (!item) return;
+          
+          const dropdown = item.querySelector(".desktop-dropdown");
+          if (!dropdown) return;
+          
+          dropdown.style.opacity = "0";
+          dropdown.style.visibility = "hidden";
+          dropdown.style.transform = "translateY(-10px)";
+          dropdown.style.transitionDelay = "0.2s";
+
+          // Reset arrow
+          const arrow = item.querySelector(".dropdown-arrow");
+          if (arrow) arrow.style.transform = "rotate(0)";
+        }, true);
+
+        // Mobile menu functionality - defer non-critical operations
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const closeMenuButton = document.getElementById("close-mobile-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileMenuContent = document.getElementById("mobile-menu-content");
+
+        function toggleMobileMenu(show) {
+          mobileMenu.style.opacity = show ? "1" : "0";
+          mobileMenu.style.pointerEvents = show ? "auto" : "none";
+          mobileMenuContent.style.transform = show ? "translateX(0)" : "translateX(100%)";
+          document.body.style.overflow = show ? "hidden" : "";
+        }
+
+        // Use passive event listeners for better performance
+        mobileMenuButton.addEventListener("click", () => toggleMobileMenu(true), { passive: true });
+        closeMenuButton.addEventListener("click", () => toggleMobileMenu(false), { passive: true });
+        mobileMenu.addEventListener("click", (e) => {
+          if (e.target === mobileMenu) {
+            toggleMobileMenu(false);
+          }
+        }, { passive: true });
+
+        // Use requestIdleCallback for non-critical mobile dropdown functionality
+        const setupMobileDropdowns = () => {
+          const mobileDropdownToggles = document.querySelectorAll(".mobile-dropdown-toggle");
+          
+          mobileDropdownToggles.forEach((toggle) => {
+            const dropdown = toggle.closest("div").nextElementSibling;
+            const arrow = toggle.querySelector("svg");
+            
+            // Also make the menu item text clickable to toggle dropdown
+            const menuItemText = toggle.closest(".flex").querySelector("span");
+            if (menuItemText) {
+              menuItemText.addEventListener("click", () => {
+                toggle.click(); // Trigger the toggle button click
+              }, { passive: true });
+              menuItemText.style.cursor = "pointer"; // Show pointer cursor on hover
+            }
+
+            toggle.addEventListener("click", () => {
+              const isExpanded = dropdown.style.height !== "0px" && dropdown.style.height !== "";
+
+              if (!isExpanded) {
+                // Expand
+                const height = dropdown.scrollHeight;
+                dropdown.style.height = height + "px";
+                arrow.style.transform = "rotate(180deg)";
+              } else {
+                // Collapse
+                dropdown.style.height = "0";
+                arrow.style.transform = "rotate(0)";
+              }
+            }, { passive: true });
+          });
+        };
+
+        // Use requestIdleCallback for non-critical operations
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(setupMobileDropdowns);
+        } else {
+          // Fallback for browsers that don't support requestIdleCallback
+          setTimeout(setupMobileDropdowns, 200);
+        }
+      });
+    </script>
+  </body>
+</html>

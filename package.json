@@ -9,6 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/tailwind": "^6.0.0",
     "astro": "^5.5.2"
+  },
+  "devDependencies": {
+    "astro-compress": "^2.3.6",
+    "sharp": "^0.33.5"
   }
 }

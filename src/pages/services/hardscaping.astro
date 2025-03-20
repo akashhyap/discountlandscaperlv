@@ -1,0 +1,235 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/Button.astro";
+import { Image } from 'astro:assets';
+import hardscapingImg from '../../assets/images/hardscaping-henderson.png';
+
+// Testimonials data
+const testimonials = [
+  {
+    text: "The hardscaping work Discount Landscaper LV did for our backyard completely transformed the space. The fire pit and retaining walls look amazing, and the quality of work is outstanding.",
+    author: "Mark & Susan, Henderson"
+  },
+  {
+    text: "We hired Discount Landscaper LV to build an outdoor kitchen and patio area. The team was professional, on time, and the finished product exceeded our expectations. We use the space almost every day!",
+    author: "Jennifer L., Las Vegas"
+  }
+];
+---
+
+<Layout
+  title="Hardscaping Services | Discount Landscaper LV"
+  description="Professional hardscaping services in Las Vegas. Fire pits, retaining walls, outdoor kitchens, and water features to transform your outdoor living space."
+>
+  <!-- Hero Section -->
+  <section class="relative">
+    <div class="w-full h-[50vh] min-h-[400px]">
+      <Image
+        src={hardscapingImg}
+        alt="Hardscaping"
+        width={1200}
+        height={600}
+        format="webp"
+        quality={90}
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="text-center text-white px-4">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Hardscaping</h1>
+          <p class="text-xl max-w-3xl mx-auto">Transform your outdoor space with durable and beautiful hardscape elements</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold mb-6">What You Need to Know <span class="text-primary">ABOUT HARDSCAPING</span></h2>
+          <p class="text-lg mb-6">
+            Transforming outdoor spaces into stunning, functional environments requires creativity, expertise, and meticulous attention to detail. At Discount Landscaper LV, we specialize in designing and installing premium hardscaping features that elevate the beauty and usability of your property. Whether you're envisioning a cozy patio, a charming garden path, or an outdoor entertainment haven, our team is here to bring your ideas to life with precision and care.
+          </p>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Why Hardscaping?</h3>
+          <p class="text-lg mb-6">
+            Hardscaping is the backbone of landscape design, providing structure and defining the character of outdoor spaces. Unlike softscape elements such as plants and flowers, hardscaping features are durable, low-maintenance, and long-lasting, making them a wise investment in both aesthetics and functionality.
+          </p>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Benefits of Hardscaping:</h3>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Durability:</span> Crafted from materials like stone, concrete, or wood, hardscaping elements can withstand the test of time and weather conditions.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Low Maintenance:</span> Once installed, hardscaping features require minimal upkeep, freeing up your time for other priorities.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Increased Property Value:</span> Well-designed hardscaping can significantly enhance the value and curb appeal of your home or business.
+              </div>
+            </li>
+          </ul>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Our Hardscaping Services</h3>
+          <p class="text-lg mb-6">
+            At Discount Landscaper LV, we offer a comprehensive range of hardscaping solutions tailored to meet your specific needs and style preferences.
+          </p>
+          
+          <div class="space-y-8 mt-8">
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">Fire Pits</h4>
+              <p>Create a warm, inviting focal point for your outdoor living area with a custom-designed fire pit. Whether you prefer a traditional wood-burning pit or a modern gas-powered feature, we can build a fire pit that complements your landscape and provides a cozy gathering spot for family and friends.</p>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">Retaining Walls</h4>
+              <p>Prevent soil erosion, define garden spaces, and add architectural interest with expertly built retaining walls. Our designs are both functional and visually appealing, seamlessly blending with your outdoor space. We work with various materials including natural stone, concrete blocks, and brick to create walls that match your aesthetic preferences.</p>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">Outdoor Kitchens</h4>
+              <p>Expand your living and entertaining space with a custom outdoor kitchen. From simple grilling stations to elaborate cooking areas with countertops, sinks, refrigerators, and more, we can design and build an outdoor kitchen that suits your cooking style and entertainment needs. Our outdoor kitchens are built with durable, weather-resistant materials that can withstand Las Vegas' harsh climate.</p>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">Water Features</h4>
+              <p>Transform your yard into a serene retreat with elegant water features such as fountains, ponds, or waterfalls. These installations bring tranquility and movement to your outdoor environment, creating a peaceful atmosphere and attracting local wildlife. Our water features are designed to be water-efficient and low-maintenance, perfect for the desert climate.</p>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Additional Hardscaping Elements We Offer:</h3>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Patios and Decks:</span> Create a warm, inviting space for relaxing or entertaining with a custom patio or deck. Choose from materials like natural stone, pavers, or composite decking to complement your property's aesthetic.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Walkways and Pathways:</span> Guide guests through your garden or connect key areas of your property with beautifully designed walkways. We offer a variety of materials and styles to suit your landscape and personal taste.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Pergolas and Shade Structures:</span> Add architectural interest and functional shade to your outdoor space with custom-built pergolas, gazebos, or shade sails.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Outdoor Lighting:</span> Extend the use of your outdoor spaces into the evening with strategically placed lighting. From soft pathway lights to dramatic accent lighting, we'll design a system that enhances safety and ambiance.
+              </div>
+            </li>
+          </ul>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Why Choose Discount Landscaper LV for Your Hardscaping Needs?</h3>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Expertise and Craftsmanship:</span> With years of experience in hardscaping, we bring unmatched skill and attention to detail to every project. From the initial consultation to final installation, we ensure superior results that exceed expectations.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Customized Solutions:</span> Your property is unique, and so are your needs. That's why we offer tailored hardscaping solutions designed to align with your goals, preferences, and budget.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Premium Materials:</span> We source only the highest quality materials, from natural stone to composite decking, ensuring your hardscaping features are both beautiful and long-lasting.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Commitment to Excellence:</span> We take pride in every project we undertake, focusing on meticulous craftsmanship and exceptional customer service. Your satisfaction is our top priority.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 bg-secondary/10">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {testimonials.map((testimonial) => (
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <svg class="h-10 w-10 text-primary mb-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            <p class="text-gray-700 mb-4 italic">{testimonial.text}</p>
+            <p class="font-semibold">{testimonial.author}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Outdoor Space?</h2>
+        <p class="text-xl mb-10">Contact us today to schedule a consultation with one of our hardscaping experts.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button
+            text="Get a Free Quote"
+            href="/quote"
+            size="lg"
+            variant="primary"
+            ariaLabel="Get a free quote"
+          />
+          <Button
+            text="Contact Us"
+            href="/get-in-touch"
+            size="lg"
+            variant="outline"
+            ariaLabel="Contact us"
+            className="border-accent text-accent hover:bg-accent/10"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

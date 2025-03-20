@@ -1,0 +1,195 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import { Image } from 'astro:assets';
+import aboutImage from '../assets/images/about-us.jpg';
+
+const values = [
+  {
+    title: "Quality Craftsmanship",
+    description: "We take pride in our work and never cut corners. Every project is completed with attention to detail and the highest standards of quality."
+  },
+  {
+    title: "Customer Satisfaction",
+    description: "Our clients' satisfaction is our top priority. We listen carefully to your needs and work diligently to exceed your expectations."
+  },
+  {
+    title: "Environmental Responsibility",
+    description: "We're committed to sustainable landscaping practices that conserve water and protect the environment while creating beautiful outdoor spaces."
+  },
+  {
+    title: "Integrity & Transparency",
+    description: "We believe in honest communication and fair pricing. You'll always know what to expect with no hidden costs or surprises."
+  }
+];
+
+const milestones = [
+  {
+    year: "2010",
+    title: "Company Founded",
+    description: "Discount Landscaper LV was established with a mission to provide quality landscaping services at affordable prices."
+  },
+  {
+    year: "2013",
+    title: "Expanded Services",
+    description: "Added artificial turf installation to our service offerings, helping Las Vegas homeowners conserve water while maintaining beautiful lawns."
+  },
+  {
+    year: "2015",
+    title: "New Headquarters",
+    description: "Moved to our current location with expanded facilities to better serve our growing customer base."
+  },
+  {
+    year: "2018",
+    title: "Best of Las Vegas Award",
+    description: "Recognized as one of the top landscaping companies in Las Vegas by the Las Vegas Review-Journal."
+  },
+  {
+    year: "2020",
+    title: "10 Year Anniversary",
+    description: "Celebrated a decade of transforming Las Vegas landscapes and expanded our team to meet increasing demand."
+  },
+  {
+    year: "2023",
+    title: "Sustainable Landscaping Initiative",
+    description: "Launched a new program focused on water-wise landscaping solutions specifically designed for the Las Vegas climate."
+  }
+];
+---
+
+<Layout title="About Us | Discount Landscaper LV" description="Learn about Discount Landscaper LV's history, our team, and our commitment to quality landscaping services in Las Vegas, NV.">
+  <section class="relative py-16 md:py-24">
+    <div class="absolute inset-0 z-0 bg-gradient-to-b from-gray-50 to-white"></div>
+    <div class="container relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl lg:text-5xl font-black mb-4">About <span class="text-primary">Our Company</span></h1>
+        <p class="text-xl mb-8">
+          Las Vegas' trusted landscaping partner for over 15 years
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="section-title">Our <span class="text-primary">Story</span></h2>
+          <p class="mb-6">
+            Founded in 2010, Discount Landscaper LV began with a simple mission: to provide Las Vegas homeowners with high-quality landscaping services at affordable prices. What started as a small operation has grown into one of the most trusted landscaping companies in the Las Vegas Valley.
+          </p>
+          <p class="mb-6">
+            Our founder, Michael Rodriguez, recognized the unique challenges of desert landscaping and the importance of water conservation in our community. He built a team of skilled professionals who share his passion for creating beautiful, sustainable outdoor spaces that thrive in the Las Vegas climate.
+          </p>
+          <p class="mb-6">
+            Over the years, we've expanded our services to include artificial turf installation, paver patios, hardscaping, and complete landscape renovations. Throughout our growth, we've maintained our commitment to quality craftsmanship, customer satisfaction, and environmental responsibility.
+          </p>
+          <p class="mb-6">
+            Today, we're proud to have transformed thousands of properties across Las Vegas, Henderson, and North Las Vegas. Our team continues to grow, but our dedication to exceptional service remains unchanged.
+          </p>
+        </div>
+        <div class="rounded-lg overflow-hidden h-[500px]">
+          <Image 
+            src={aboutImage} 
+            alt="Landscaping Team" 
+            width={800}
+            height={600}
+            format="webp"
+            quality={80}
+            class="w-full h-full object-cover" 
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-secondary/10 py-20">
+    <div class="container">
+      <h2 class="text-center section-title mb-12">Our <span class="text-primary">Values</span></h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {values.map(value => (
+          <div class="bg-white p-8 rounded-xl shadow-sm">
+            <h3 class="text-2xl font-bold mb-4">{value.title}</h3>
+            <p>{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-gray-50 py-20">
+    <div class="container">
+      <h2 class="text-center section-title mb-12">Our <span class="text-primary">Journey</span></h2>
+      
+      <!-- Desktop Timeline (hidden on mobile) -->
+      <div class="relative hidden md:block">
+        <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-secondary/10"></div>
+        
+        <div class="space-y-12">
+          {milestones.map((milestone, index) => (
+            <div class={`relative flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+              <div class="w-1/2"></div>
+              <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-secondary text-white text-base flex items-center justify-center z-10">
+                {milestone.year}
+              </div>
+              <div class={`w-1/2 ${index % 2 === 0 ? 'pl-12' : 'pr-12'}`}>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                  <h3 class="text-xl font-bold mb-2">{milestone.title}</h3>
+                  <p>{milestone.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Mobile Timeline (hidden on desktop) -->
+      <div class="md:hidden">
+        <div class="relative">
+          <div class="absolute left-6 top-0 h-full w-[2px] bg-secondary/10"></div>
+          
+          <div class="space-y-8">
+            {milestones.map((milestone) => (
+              <div class="relative pl-16">
+                <div class="absolute left-0 w-12 h-12 rounded-full bg-secondary text-white text-base flex items-center justify-center z-10">
+                  {milestone.year}
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                  <h3 class="text-xl font-bold mb-2">{milestone.title}</h3>
+                  <p>{milestone.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="py-20 text-center max-w-3xl mx-auto">
+        <h2 class="section-title font-bold mb-4">Ready to <span class="text-primary">Transform</span> Your <span class="text-primary">Outdoor Space</span>?</h2>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">Contact us today to schedule a consultation with one of our landscape design experts.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+          <Button 
+            text="Get a Free Quote"
+            href="/quote"
+            size="lg"
+            variant="primary"
+            ariaLabel="Get a free quote"
+          />
+          <Button 
+            text="Contact Us"
+            href="#contact"
+            size="lg"
+            variant="outline"
+            ariaLabel="Contact us"
+            className="border-accent text-accent hover:bg-accent/10"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

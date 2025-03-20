@@ -1,0 +1,97 @@
+---
+const services = [
+  {
+    title: "LANDSCAPE DESIGN",
+    description: "Our professional landscape designers will create a custom plan tailored to your property, preferences, and lifestyle. From concept to completion, we'll help you visualize your dream outdoor space.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+    </svg>`,
+    features: [
+      "Custom Design Plans",
+      "3D Visualization",
+      "Plant Selection",
+      "Sustainable Options",
+    ],
+    slug: "landscape-design"
+  },
+  {
+    title: "ARTIFICIAL TURF",
+    description: "Enjoy a beautiful, low-maintenance lawn year-round with our premium artificial turf installation. Perfect for desert climates, our turf is durable, pet-friendly, and looks natural.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+    </svg>`,
+    features: [
+      "Drought Resistant",
+      "Pet Friendly",
+      "UV Protected",
+      "10-Year Warranty",
+    ],
+    slug: "artificial-turf-installation"
+  },
+  {
+    title: "PAVER INSTALLATION",
+    description: "Create stunning outdoor living spaces with our professional paver installation services. We offer a wide variety of patterns, colors, and materials to enhance your property's beauty and value.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+    </svg>`,
+    features: [
+      "Custom Patterns",
+      "Quality Materials",
+      "Proper Drainage",
+      "Professional Installation",
+    ],
+    slug: "paver-installation"
+  },
+  {
+    title: "HARDSCAPING",
+    description: "Transform your outdoor space with custom hardscaping features that add structure, functionality, and beauty. From fire pits to retaining walls, we create durable outdoor elements.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+    </svg>`,
+    features: [
+      "Fire Pits",
+      "Retaining Walls",
+      "Outdoor Kitchens",
+      "Water Features",
+    ],
+    slug: "hardscaping"
+  },
+];
+
+// Import Button component
+import Button from './Button.astro';
+---
+
+<section class="section py-20" id="services">
+  <div class="container">
+    <h2 class="text-center section-title mb-4">
+      Our <span class="text-primary">Professional</span> Services
+    </h2>
+    <p class="text-center text-xl max-w-3xl mx-auto">Transform your outdoor space with our
+      comprehensive landscaping solutions tailored to your needs</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+      {
+        services.map((service) => (
+          <div class="bg-white p-8 rounded-xl shadow-md flex flex-col">
+            <div class="mb-6" set:html={service.icon} />
+            
+            <h3 class="text-xl font-semibold mb-4">{service.title}</h3>
+            <p class="mb-6 text-gray-700">{service.description}</p>
+            
+            <div class="mt-auto flex justify-end">
+              <Button 
+                text="Read More"
+                href={`/services/${service.slug}`}
+                size="sm"
+                variant="outline"
+                ariaLabel={`Learn more about ${service.title}`}
+                className="border-0 text-accent hover:bg-accent/10 font-normal"
+              />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

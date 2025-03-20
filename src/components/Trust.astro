@@ -1,0 +1,56 @@
+---
+const reviews = [
+  {
+    rating: 5,
+    text: "The team at Discount Landscaper transformed our backyard into a beautiful, low-maintenance oasis. The artificial turf looks amazing year-round!",
+    author: "David M."
+  },
+  {
+    rating: 5,
+    text: "Professional, punctual, and precise. Our new paver patio exceeded our expectations. Would highly recommend their services to anyone.",
+    author: "Jennifer K."
+  },
+  {
+    rating: 5,
+    text: "From design to completion, the process was smooth and stress-free. The crew was respectful of our property and completed the job on time.",
+    author: "Robert T."
+  },
+  {
+    rating: 5,
+    text: "We love our new artificial turf! It's perfect for our dogs and looks great all year. The installation was quick and the team was very professional.",
+    author: "Lisa S."
+  },
+  {
+    rating: 5,
+    text: "The hardscaping work they did on our property has completely transformed the space. The fire pit and seating area are exactly what we wanted.",
+    author: "Michael P."
+  },
+  {
+    rating: 5,
+    text: "Excellent service from start to finish. The team was knowledgeable, professional, and the quality of work was outstanding.",
+    author: "Sarah J."
+  }
+];
+---
+
+<section class="section bg-secondary/15 py-20">
+  <div class="container">
+    <h2 class="text-center section-title max-w-3xl mx-auto">Las Vegas' <span class="text-primary">Most Trusted</span> Landscaping Service</h2>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
+      {reviews.map(review => (
+        <div class="p-6 border border-secondary/10 rounded-sm">
+          <div class="flex mb-3">
+            {Array(5).fill(0).map((_, i) => (
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class={`w-5 h-5 ${i < review.rating ? 'text-yellow-400' : 'text-gray-400'}`}>
+                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+              </svg>
+            ))}
+          </div>
+          <p class="mb-4">{review.text}</p>
+          <p class="font-medium">{review.author}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

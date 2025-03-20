@@ -1,0 +1,199 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/Button.astro";
+import { Image } from 'astro:assets';
+import landscapeDesignImg from '../../assets/images/landscape-design.jpg';
+
+// Testimonials data
+const testimonials = [
+  {
+    text: "The landscape design team at Discount Landscaper LV transformed our barren yard into a desert oasis. Their attention to detail and creative vision exceeded our expectations!",
+    author: "Sarah M., Las Vegas"
+  },
+  {
+    text: "We were impressed by how the designers incorporated our ideas while suggesting practical solutions for our challenging lot. The 3D visualization really helped us see the potential.",
+    author: "Michael & Jennifer, Henderson"
+  }
+];
+---
+
+<Layout
+  title="Landscape Design Services | Discount Landscaper LV"
+  description="Professional landscape design services in Las Vegas. Custom plans, 3D visualization, sustainable options, and expert plant selection for your property."
+>
+  <!-- Hero Section -->
+  <section class="relative">
+    <div class="w-full h-[50vh] min-h-[400px]">
+      <Image
+        src={landscapeDesignImg}
+        alt="Landscape Design"
+        width={1200}
+        height={600}
+        format="webp"
+        quality={90}
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="text-center text-white px-4">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Landscape Design</h1>
+          <p class="text-xl max-w-3xl mx-auto">Creating beautiful, functional outdoor spaces tailored to your lifestyle</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold mb-6">What You Need to Know <span class="text-primary">ABOUT LANDSCAPE DESIGN</span></h2>
+          <p class="text-lg mb-6">
+            Transforming outdoor spaces into stunning, functional environments requires creativity, expertise, and meticulous attention to detail. At Discount Landscaper LV, we specialize in designing and installing premium landscape features that elevate the beauty and usability of your property. Whether you're envisioning a cozy garden retreat, a water-wise xeriscape, or an outdoor entertainment haven, our team is here to bring your ideas to life with precision and care.
+          </p>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Why Professional Landscape Design?</h3>
+          <p class="text-lg mb-6">
+            Professional landscape design is the foundation of a successful outdoor space. It ensures that your landscape not only looks beautiful but also functions efficiently, conserves resources, and complements your home's architecture. Our designers consider factors like climate, soil conditions, water usage, and your lifestyle needs to create a cohesive plan that will thrive in Las Vegas' unique desert environment.
+          </p>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Benefits of Professional Landscape Design:</h3>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Cohesive Vision:</span> A professional design ensures all elements work together harmoniously, avoiding the piecemeal look of DIY projects.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Water Efficiency:</span> Proper design can reduce water usage by up to 60% through strategic plant selection and irrigation planning.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Increased Property Value:</span> Well-designed landscapes can increase property values by 15-20%, offering an excellent return on investment.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Long-term Planning:</span> Professional designs can include phased implementation, allowing you to build your dream landscape over time.
+              </div>
+            </li>
+          </ul>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Our Landscape Design Services</h3>
+          <p class="text-lg mb-6">
+            At Discount Landscaper LV, we offer comprehensive landscape design services tailored to meet your specific needs and style preferences.
+          </p>
+          
+          <div class="space-y-8 mt-8">
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">Custom Design Consultations</h4>
+              <p>Our process begins with a thorough consultation to understand your goals, preferences, and budget. We assess your property's unique characteristics and discuss how you want to use your outdoor space.</p>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">3D Landscape Visualization</h4>
+              <p>Using advanced software, we create detailed 3D renderings that allow you to see your future landscape before any work begins. This helps ensure your vision aligns with our design and allows for adjustments before implementation.</p>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">Plant Selection Guidance</h4>
+              <p>We help you select plants that not only look beautiful but will thrive in Las Vegas' desert climate. Our experts consider factors like sun exposure, water requirements, and maintenance needs to create a sustainable plant palette.</p>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">Sustainable Design Options</h4>
+              <p>We incorporate eco-friendly practices into our designs, including water-efficient irrigation systems, native plant selections, and permeable hardscapes that reduce runoff and conserve resources.</p>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Why Choose Discount Landscaper LV?</h3>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Local Expertise:</span> Our designers understand Las Vegas' unique climate and soil conditions, ensuring your landscape will thrive in our desert environment.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Comprehensive Service:</span> From initial design through installation and maintenance, we provide end-to-end solutions for your landscape needs.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Attention to Detail:</span> We pride ourselves on meticulous craftsmanship and thoughtful design that considers both aesthetics and functionality.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 bg-secondary/10">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {testimonials.map((testimonial) => (
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <svg class="h-10 w-10 text-primary mb-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            <p class="text-gray-700 mb-4 italic">{testimonial.text}</p>
+            <p class="font-semibold">{testimonial.author}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Outdoor Space?</h2>
+        <p class="text-xl mb-10">Contact us today to schedule a consultation with one of our landscape design experts.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button
+            text="Get a Free Quote"
+            href="/quote"
+            size="lg"
+            variant="primary"
+            ariaLabel="Get a free quote"
+          />
+          <Button
+            text="Contact Us"
+            href="/get-in-touch"
+            size="lg"
+            variant="outline"
+            ariaLabel="Contact us"
+            className="border-accent text-accent hover:bg-accent/10"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,221 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/Button.astro";
+import { Image } from 'astro:assets';
+import artificialTurfImg from '../../assets/images/artificial-turf.jpg';
+
+// Testimonials data
+const testimonials = [
+  {
+    text: "We installed artificial turf in our backyard and couldn't be happier! It looks natural, our dogs love it, and we've saved so much on our water bill. The team at Discount Landscaper LV was professional and efficient.",
+    author: "Robert & Lisa, Las Vegas"
+  },
+  {
+    text: "After years of struggling with brown patches and high water bills, switching to artificial turf was the best decision. It stays green year-round with zero maintenance. The installation was quick and the results are amazing!",
+    author: "David T., Henderson"
+  }
+];
+---
+
+<Layout
+  title="Artificial Turf Installation | Discount Landscaper LV"
+  description="Professional artificial turf installation in Las Vegas. Enjoy a lush, green lawn year-round without water bills and maintenance. Perfect for the desert climate."
+>
+  <!-- Hero Section -->
+  <section class="relative">
+    <div class="w-full h-[50vh] min-h-[400px]">
+      <Image
+        src={artificialTurfImg}
+        alt="Artificial Turf Installation"
+        width={1200}
+        height={600}
+        format="webp"
+        quality={90}
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="text-center text-white px-4">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Artificial Turf Installation</h1>
+          <p class="text-xl max-w-3xl mx-auto">Enjoy a lush, green lawn year-round without the water bills and maintenance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold mb-6">What You Need to Know <span class="text-primary">ABOUT ARTIFICIAL TURF</span></h2>
+          <p class="text-lg mb-6">
+            In the harsh desert climate of Las Vegas, maintaining a lush, green lawn can be a constant battle against the elements and water restrictions. Artificial turf offers a practical, beautiful alternative that provides the look and feel of natural grass without the ongoing maintenance and resource consumption. At Discount Landscaper LV, we specialize in premium artificial turf installation that transforms your outdoor spaces into vibrant, usable areas that stay green year-round.
+          </p>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Why Choose Artificial Turf?</h3>
+          <p class="text-lg mb-6">
+            Artificial turf has evolved significantly over the years, offering increasingly realistic appearance and texture while providing numerous practical benefits. For Las Vegas homeowners, artificial turf represents a smart investment that pays dividends in water savings, reduced maintenance, and year-round curb appeal.
+          </p>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Benefits of Artificial Turf:</h3>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Water Conservation:</span> Eliminate lawn watering entirely, saving thousands of gallons of water annually and reducing utility bills.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Minimal Maintenance:</span> No more mowing, edging, fertilizing, or treating for pests and weeds, saving you time and money.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Year-Round Green:</span> Enjoy a perfectly manicured lawn regardless of season, heat waves, or water restrictions.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Pet and Child-Friendly:</span> Modern artificial turf is safe for children and pets, with options specifically designed for pet areas.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Durability:</span> Quality artificial turf can last 15-20 years with minimal care, making it a long-term investment.
+              </div>
+            </li>
+          </ul>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Our Artificial Turf Services</h3>
+          <p class="text-lg mb-6">
+            At Discount Landscaper LV, we provide comprehensive artificial turf solutions tailored to your specific needs and property characteristics.
+          </p>
+          
+          <div class="space-y-8 mt-8">
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">Consultation and Design</h4>
+              <p>We begin with a thorough assessment of your property and discussion of your goals. Our experts will help you select the right turf product for your specific needs, whether it's for a front yard, backyard play area, or pet zone.</p>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">Professional Installation</h4>
+              <p>Our installation process includes proper site preparation, removal of existing grass if needed, installation of a durable base, precision cutting and seaming of turf, and secure anchoring. We pay special attention to drainage to ensure your turf will perform well for years to come.</p>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">Premium Turf Products</h4>
+              <p>We offer a variety of high-quality artificial turf options, including:</p>
+              <ul class="list-disc pl-6 mt-2 space-y-2">
+                <li><span class="font-semibold">Standard Residential Turf:</span> Realistic appearance with moderate traffic durability</li>
+                <li><span class="font-semibold">Premium Landscape Turf:</span> Ultra-realistic with multiple blade colors and textures</li>
+                <li><span class="font-semibold">Pet-Friendly Turf:</span> Specially designed for superior drainage and odor control</li>
+                <li><span class="font-semibold">Play Area Turf:</span> Extra cushioning for safety in children's play areas</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">UV-Protected Materials</h4>
+              <p>All our artificial turf products are UV-stabilized to prevent fading and deterioration in the intense Las Vegas sun, ensuring your lawn stays vibrant and green for years to come.</p>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Why Choose Discount Landscaper LV for Your Artificial Turf?</h3>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Experience:</span> Our team has installed thousands of square feet of artificial turf throughout the Las Vegas Valley, with expertise in the unique challenges of desert installation.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Quality Products:</span> We partner with leading manufacturers to offer only premium turf products with excellent warranties and longevity.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Proper Installation:</span> Our meticulous installation process ensures your turf will look great and perform well for years to come, with proper drainage and secure anchoring.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">10-Year Warranty:</span> We stand behind our work with comprehensive warranty coverage for both materials and installation.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 bg-secondary/10">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {testimonials.map((testimonial) => (
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <svg class="h-10 w-10 text-primary mb-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            <p class="text-gray-700 mb-4 italic">{testimonial.text}</p>
+            <p class="font-semibold">{testimonial.author}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Ready to Enjoy a Beautiful, Low-Maintenance Lawn?</h2>
+        <p class="text-xl mb-10">Contact us today to schedule a consultation and get a free estimate for your artificial turf installation.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button
+            text="Get a Free Quote"
+            href="/quote"
+            size="lg"
+            variant="primary"
+            ariaLabel="Get a free quote"
+          />
+          <Button
+            text="Contact Us"
+            href="/get-in-touch"
+            size="lg"
+            variant="outline"
+            ariaLabel="Contact us"
+            className="border-accent text-accent hover:bg-accent/10"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

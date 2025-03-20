@@ -1,0 +1,44 @@
+---
+import Button from './Button.astro';
+import { Image } from 'astro:assets';
+import aboutImage from '../assets/images/about-us.jpg';
+// Try a different approach for the image
+---
+
+<section class="section bg-white" id="about">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="section-title">Transforming <span class="text-primary">Las Vegas</span> Yards for Over 15 Years</h2>
+        <p class="mb-6">
+          Since 2010, Discount Landscaper LV has been the trusted choice for homeowners and businesses in Las Vegas looking to transform their outdoor spaces. Our team of experienced professionals is dedicated to delivering exceptional results on every project.
+        </p>
+        <p class="mb-6">
+          We specialize in artificial turf installation, paver patios, and complete landscape renovations. Our commitment to quality materials, expert craftsmanship, and customer satisfaction has made us one of the most respected landscaping companies in the Las Vegas Valley.
+        </p>
+        <p class="mb-6">
+          Whether you're looking to conserve water with drought-resistant landscaping, create an outdoor entertainment area, or simply enhance your property's curb appeal, our team has the knowledge and skills to bring your vision to life.
+        </p>
+        <Button 
+          text="Learn More About Us"
+          href="/about"
+          size="md"
+          variant="primary"
+          ariaLabel="Learn more about our company"
+        />
+      </div>
+      <div class="rounded-lg overflow-hidden h-96">
+        <Image 
+          src={aboutImage} 
+          alt="Landscaping Team" 
+          width={800}
+          height={600}
+          format="webp"
+          quality={80}
+          class="w-full h-full object-cover" 
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>

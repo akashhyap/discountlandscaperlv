@@ -1,0 +1,97 @@
+---
+// Define props with default values
+interface Props {
+  text: string;
+  href?: string;
+  type?: "button" | "submit" | "reset";
+  size?: "sm" | "md" | "lg";
+  variant?: "primary" | "secondary" | "outline";
+  fullWidth?: boolean;
+  icon?: boolean;
+  ariaLabel?: string;
+  className?: string;
+}
+
+const {
+  text,
+  href,
+  type = "button",
+  size = "md",
+  variant = "primary",
+  fullWidth = false,
+  icon = true,
+  ariaLabel,
+  className = "",
+} = Astro.props;
+
+// Size classes
+const sizeClasses = {
+  sm: "px-4 py-2 text-sm",
+  md: "px-6 py-4 text-lg",
+  lg: "px-6 lg:px-12 py-5 text-xl lg:text-2xl"
+};
+
+// Variant classes
+const variantClasses = {
+  primary: "bg-accent hover:bg-accent/90 text-white",
+  secondary: "bg-secondary hover:bg-secondary/90 text-white",
+  outline: "bg-transparent border-2 border-accent text-accent hover:bg-accent/10"
+};
+
+// Combine classes
+const classes = [
+  "group inline-flex items-center justify-center rounded-full transition-all hover:scale-[1.02] font-bold",
+  sizeClasses[size],
+  variantClasses[variant],
+  fullWidth ? "w-full" : "",
+  className
+].filter(Boolean).join(" ");
+---
+
+{
+  href ? (
+    <a href={href} class={classes} aria-label={ariaLabel || text}>
+      {text}
+      {icon && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"
+          ></path>
+        </svg>
+      )}
+    </a>
+  ) : (
+    <button
+      type={type}
+      class={classes}
+      aria-label={ariaLabel || text}
+    >
+      {text}
+      {icon && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"
+          ></path>
+        </svg>
+      )}
+    </button>
+  )
+}

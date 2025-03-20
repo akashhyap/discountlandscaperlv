@@ -1,0 +1,28 @@
+---
+import Button from "./Button.astro";
+---
+
+<section class="bg-secondary text-white py-20">
+  <div class="container">
+    <div class="flex flex-col lg:flex-row justify-between items-center">
+      <div class="text-center lg:text-left max-w-2xl mb-6 lg:mb-0">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-4">
+          Transform Your Yard <span class="text-primary">Without The Wait</span>
+        </h2>
+        <p class="text-white/80">
+          Get started today and enjoy your new outdoor space sooner than you
+          think.
+        </p>
+      </div>
+      <div class="text-center">
+        <Button
+          text="Schedule a Free Consultation"
+          href="/quote"
+          size="lg"
+          variant="primary"
+          ariaLabel="Schedule a free consultation"
+        />
+      </div>
+    </div>
+  </div>
+</section>

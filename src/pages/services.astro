@@ -1,0 +1,301 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import { Image } from 'astro:assets';
+import landscapeDesignImg from '../assets/images/landscape-design.jpg';
+import hardscapingImg from '../assets/images/hardscaping-henderson.png';
+import artificialTurfImg from '../assets/images/artificial-turf.jpg';
+import paversImg from '../assets/images/pavers.jpg';
+
+const services = [
+  {
+    title: "Landscape Design",
+    description:
+      "Our professional landscape designers will create a custom plan tailored to your property and preferences, considering factors like climate, soil, and your lifestyle needs.",
+    image: landscapeDesignImg,
+    features: [
+      "Custom design consultations",
+      "3D landscape visualization",
+      "Plant selection guidance",
+      "Sustainable design options",
+      "Phased implementation planning",
+    ],
+    slug: "landscape-design"
+  },
+  {
+    title: "Hardscaping",
+    description:
+      "Transform your outdoor space with durable and beautiful hardscape elements that add structure, function, and value to your property.",
+    image: hardscapingImg,
+    features: [
+      "Patios and walkways",
+      "Retaining walls",
+      "Outdoor kitchens",
+      "Fire pits and fireplaces",
+      "Pergolas and shade structures",
+    ],
+    slug: "hardscaping"
+  },
+  {
+    title: "Artificial Turf Installation",
+    description:
+      "Enjoy a lush, green lawn year-round without the water bills and maintenance. Our artificial turf is perfect for the Las Vegas climate.",
+    image: artificialTurfImg,
+    features: [
+      "Drought-resistant solution",
+      "Pet and child-friendly options",
+      "UV-resistant materials",
+      "Proper drainage installation",
+      "10-15 year lifespan",
+    ],
+    slug: "artificial-turf-installation"
+  },
+  {
+    title: "Desert Landscaping",
+    description:
+      "Embrace the natural beauty of the desert with xeriscaping designs that conserve water while creating stunning outdoor environments.",
+    image: paversImg,
+    features: [
+      "Native plant selection",
+      "Decorative rock installation",
+      "Efficient irrigation systems",
+      "Desert-adapted trees and shrubs",
+      "Low-maintenance designs",
+    ],
+    slug: "desert-landscaping"
+  },
+  {
+    title: "Irrigation Systems",
+    description:
+      "Keep your landscape healthy and thriving with efficient irrigation systems designed for the Las Vegas climate and water restrictions.",
+    image: landscapeDesignImg,
+    features: [
+      "Drip irrigation installation",
+      "Smart controller setup",
+      "System repairs and upgrades",
+      "Water conservation solutions",
+      "Seasonal maintenance programs",
+    ],
+    slug: "irrigation-systems"
+  },
+  {
+    title: "Outdoor Lighting",
+    description:
+      "Extend your outdoor enjoyment into the evening with professionally designed lighting that enhances safety, security, and aesthetics.",
+    image: paversImg,
+    features: [
+      "LED landscape lighting",
+      "Path and step lighting",
+      "Security lighting",
+      "Accent and feature lighting",
+      "Energy-efficient solutions",
+    ],
+    slug: "outdoor-lighting"
+  },
+  {
+    title: "Lawn Maintenance",
+    description:
+      "Keep your landscape looking its best with our comprehensive maintenance services tailored to the unique needs of Las Vegas properties.",
+    image: hardscapingImg,
+    features: [
+      "Regular lawn care",
+      "Seasonal clean-ups",
+      "Fertilization programs",
+      "Pest and weed control",
+      "Pruning and trimming",
+    ],
+    slug: "lawn-maintenance"
+  },
+  {
+    title: "Water Features",
+    description:
+      "Add the soothing sound and visual appeal of water to your landscape with custom water features designed for the desert environment.",
+    image: paversImg,
+    features: [
+      "Fountains and bubbling rocks",
+      "Pondless waterfalls",
+      "Reflection pools",
+      "Low-water consumption designs",
+      "LED lighting integration",
+    ],
+    slug: "water-features"
+  },
+];
+
+const process = [
+  {
+    number: "01",
+    title: "Initial Consultation",
+    description:
+      "We start with a thorough discussion of your vision, needs, and budget to understand exactly what you're looking for.",
+  },
+  {
+    number: "02",
+    title: "Design & Proposal",
+    description:
+      "Our team creates a custom design and detailed proposal outlining the scope of work, materials, timeline, and costs.",
+  },
+  {
+    number: "03",
+    title: "Project Execution",
+    description:
+      "Once approved, our skilled crew brings your vision to life with quality craftsmanship and attention to detail.",
+  },
+  {
+    number: "04",
+    title: "Final Walkthrough",
+    description:
+      "We conduct a thorough inspection with you to ensure everything meets our high standards and your expectations.",
+  },
+];
+---
+
+<Layout
+  title="Landscaping Services | Discount Landscaper LV"
+  description="Explore our comprehensive landscaping services in Las Vegas, including design, hardscaping, artificial turf, desert landscaping, irrigation, and more."
+>
+  <section class="relative py-16 lg:py-24">
+    <div class="absolute inset-0 z-0 bg-gradient-to-b from-gray-50 to-white">
+    </div>
+    <div class="container relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl lg:text-5xl font-black mb-4">
+          Our <span class="text-primary">Services</span>
+        </h1>
+        <p class="text-xl mb-8">
+          From design to installation and maintenance, we provide complete
+          landscaping services to transform your outdoor space into a beautiful,
+          functional environment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white px-5 lg:px-0">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:gap-12">
+        {
+          services.map((service, index) => (
+            <div class="bg-white grid grid-cols-1 lg:grid-cols-2 gap-4 mb-10 lg:mb-20 rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
+              <div class="h-full overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  width={800}
+                  height={600}
+                  format="webp"
+                  quality={80}
+                  class="w-full h-full object-cover"
+                  loading={index <= 1 ? "eager" : "lazy"}
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-3xl font-bold mb-3">{service.title}</h3>
+                <p class="text-gray-700 mb-4">{service.description}</p>
+
+                <h4 class="font-semibold text-primary mb-2">Features:</h4>
+                <ul class="space-y-1 mb-6">
+                  {service.features.map((feature) => (
+                    <li class="flex items-start">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div class="mt-10 flex gap-4">
+                  <Button
+                    text="Read More"
+                    href={`/services/${service.slug}`}
+                    size="md"
+                    variant="outline"
+                    ariaLabel={`Learn more about ${service.title}`}
+                  />
+                  <Button
+                    text="Get a Quote"
+                    href="/quote"
+                    size="md"
+                    variant="primary"
+                    ariaLabel="Get a Quote"
+                  />
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-secondary/10 px-5 lg:px-0">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="section-title mb-4">
+          Our <span class="text-primary">Process</span>
+        </h2>
+        <p class="text-lg text-gray-700">
+          We follow a structured approach to ensure your landscaping project is
+          completed efficiently, on time, and to your complete satisfaction.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        {
+          process.map((step) => (
+            <div class="bg-white p-12 rounded-lg shadow-sm relative">
+              <div class="absolute -top-5 -left-5 bg-secondary text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">
+                {step.number}
+              </div>
+              <h3 class="text-xl font-bold mb-3 mt-4">{step.title}</h3>
+              <p class="text-base">{step.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="py-20 text-center max-w-3xl mx-auto">
+        <h2 class="section-title font-bold mb-4">
+          Ready to <span class="text-primary">Transform</span> Your <span
+            class="text-primary">Outdoor Space</span
+          >?
+        </h2>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">
+          Contact us today to schedule a consultation with one of our landscape
+          design experts.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+          <Button
+            text="Get a Free Quote"
+            href="/quote"
+            size="lg"
+            variant="primary"
+            ariaLabel="Get a free quote"
+          />
+          <Button
+            text="Contact Us"
+            href="#contact"
+            size="lg"
+            variant="outline"
+            ariaLabel="Contact us"
+            className="border-accent text-accent hover:bg-accent/10"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

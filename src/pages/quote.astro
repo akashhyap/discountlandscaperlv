@@ -1,0 +1,240 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import LeadForm from "../components/LeadForm.astro";
+
+const services = [
+  "Artificial Turf",
+  "Paver Installation",
+  "Landscape Design",
+  "Hardscaping",
+  "Irrigation Systems",
+  "Outdoor Lighting",
+  "Xeriscape Conversion",
+  "Concrete Work",
+  "Drainage Solutions",
+  "Landscape Maintenance",
+];
+
+const faqs = [
+  {
+    question: "How much does landscaping typically cost in Las Vegas?",
+    answer:
+      "Landscaping costs vary widely depending on the scope of your project, materials chosen, and the size of your property. Basic landscape renovations may start around $5,000, while comprehensive projects with premium materials can range from $15,000 to $50,000+. We provide detailed, itemized quotes so you understand exactly what you're paying for.",
+  },
+  {
+    question: "How long does a typical landscaping project take to complete?",
+    answer:
+      "Project timelines depend on the complexity and scope of work. Small projects like artificial turf installation might take 2-3 days, while complete yard renovations could take 2-3 weeks. During your consultation, we'll provide a realistic timeline for your specific project.",
+  },
+  {
+    question: "Do you offer financing options?",
+    answer:
+      "Yes, we partner with several financing companies to offer flexible payment options. During your consultation, we can discuss the financing solutions available to help make your landscaping project affordable.",
+  },
+  {
+    question: "Are you licensed and insured?",
+    answer:
+      "Absolutely. Discount Landscaper LV is fully licensed, bonded, and insured in the state of Nevada. We maintain comprehensive liability insurance and workers' compensation coverage for your protection and peace of mind.",
+  },
+  {
+    question: "What areas do you serve?",
+    answer:
+      "We provide landscaping services throughout the Las Vegas Valley, including Las Vegas, North Las Vegas, Henderson, Summerlin, and surrounding areas.",
+  },
+  {
+    question: "Do you offer warranties on your work?",
+    answer:
+      "Yes, we stand behind our craftsmanship with solid warranties. Our artificial turf installations come with a 10-year warranty, and we offer varying warranty periods for other services. We'll discuss specific warranty details during your consultation.",
+  },
+];
+
+const benefits = [
+  {
+    title: "Experienced Professionals",
+    description:
+      "Our team has over 15 years of experience in the Las Vegas landscaping industry.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
+    </svg>`,
+  },
+  {
+    title: "Quality Materials",
+    description:
+      "We use only premium materials that are built to last in the harsh Las Vegas climate.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+    </svg>`,
+  },
+  {
+    title: "Competitive Pricing",
+    description:
+      "We offer transparent, competitive pricing with no hidden fees or surprises.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>`,
+  },
+  {
+    title: "Satisfaction Guaranteed",
+    description:
+      "We're not satisfied until you are. Our work comes with a satisfaction guarantee.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+    </svg>`,
+  },
+  {
+    title: "Eco-Friendly Solutions",
+    description:
+      "We specialize in water-wise landscaping designs perfect for the Las Vegas desert environment.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+    </svg>`,
+  },
+  {
+    title: "Fast Turnaround Times",
+    description:
+      "We complete most projects within 1-2 weeks, so you can enjoy your new landscape sooner.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>`,
+  },
+];
+---
+
+<Layout
+  title="Free Quote | Discount Landscaper LV"
+  description="Request a free, no-obligation quote for your landscaping project in Las Vegas. We provide detailed estimates for artificial turf, pavers, and more."
+>
+  <section class="relative py-16 md:py-24">
+    <div class="absolute inset-0 z-0 bg-gradient-to-b from-gray-50 to-white">
+    </div>
+    <div class="container relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl lg:text-5xl font-black mb-4">
+          Get Your <span class="text-primary">Free Quote</span>
+        </h1>
+        <p class="text-xl mb-8">
+          Request a detailed, no-obligation estimate for your landscaping
+          project
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white pb-20">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch gap-12">
+        <div class="bg-white p-8 rounded-lg h-full flex flex-col">
+          <h2 class="text-2xl font-bold mb-6">Request Your Free Quote</h2>
+          <LeadForm
+            formId="1e3V9ETIeQ7mf5c77JGC"
+            formName="Quote Request Form"
+          />
+        </div>
+
+        <div>
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm mb-8">
+            <h3 class="text-xl font-bold mb-6">Why Choose Us</h3>
+            <div class="space-y-6 flex-grow">
+              {
+                benefits.map((benefit) => (
+                  <div class="flex gap-5">
+                    <div class="flex-shrink-0 text-primary">
+                      <Fragment set:html={benefit.icon} />
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-semibold mb-1">
+                        {benefit.title}
+                      </h4>
+                      <p class="text-gray-600">{benefit.description}</p>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="bg-secondary/10 p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold mb-4">Contact Us Directly</h3>
+            <p class="mb-4">
+              Prefer to speak with someone? Call us or send an email:
+            </p>
+            <div class="space-y-3">
+              <div class="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5 mr-2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                  ></path>
+                </svg>
+                <span>(702) 555-1234</span>
+              </div>
+              <div class="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5 mr-2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                  ></path>
+                </svg>
+                <span>discountlandscapinglv@gmail.com</span>
+              </div>
+              <div class="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5 mr-2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Mon-Fri: 8am-6pm, Sat: 9am-4pm</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-gray-50 py-20">
+    <div class="container">
+      <h2 class="text-center section-title mb-12">
+        Frequently Asked Questions
+      </h2>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-6">
+          {
+            faqs.map((faq) => (
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h3 class="text-xl font-bold mb-2">{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

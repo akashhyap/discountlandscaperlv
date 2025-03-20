@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# SEO analysis tools
+calculate-text-html-ratio.ps1
+text-html-ratio-results.txt

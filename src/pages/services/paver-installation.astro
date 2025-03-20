@@ -1,0 +1,267 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/Button.astro";
+import { Image } from 'astro:assets';
+import paversImg from '../../assets/images/pavers.jpg';
+
+// Testimonials data
+const testimonials = [
+  {
+    text: "The paver patio Discount Landscaper LV installed transformed our backyard into an elegant entertainment space. Their attention to detail with the pattern and borders exceeded our expectations!",
+    author: "Thomas & Emily, Summerlin"
+  },
+  {
+    text: "We had our driveway replaced with pavers and couldn't be happier with the results. The team was professional, efficient, and the finished product looks amazing. A great investment for our home.",
+    author: "James K., Las Vegas"
+  }
+];
+---
+
+<Layout
+  title="Paver Installation Services | Discount Landscaper LV"
+  description="Professional paver installation in Las Vegas. Custom patterns, quality materials, proper drainage, and expert installation for patios, walkways, and driveways."
+>
+  <!-- Hero Section -->
+  <section class="relative">
+    <div class="w-full h-[50vh] min-h-[400px]">
+      <Image
+        src={paversImg}
+        alt="Paver Installation"
+        width={1200}
+        height={600}
+        format="webp"
+        quality={90}
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="text-center text-white px-4">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Paver Installation</h1>
+          <p class="text-xl max-w-3xl mx-auto">Beautiful, durable hardscapes with custom patterns and quality materials</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold mb-6">What You Need to Know <span class="text-primary">ABOUT PAVER INSTALLATION</span></h2>
+          <p class="text-lg mb-6">
+            Pavers are versatile, durable hardscape elements that can transform your outdoor living spaces while adding significant value to your property. At Discount Landscaper LV, we specialize in custom paver installation for patios, walkways, driveways, and pool decks throughout the Las Vegas Valley. Our skilled craftsmen combine quality materials with expert installation techniques to create beautiful, long-lasting hardscapes that enhance both the functionality and aesthetics of your outdoor areas.
+          </p>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Why Choose Pavers?</h3>
+          <p class="text-lg mb-6">
+            Pavers offer numerous advantages over poured concrete or asphalt surfaces, making them an excellent investment for your home or business property. Their modular nature allows for creative design possibilities while providing practical benefits that other hardscape materials simply can't match.
+          </p>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Benefits of Paver Installation:</h3>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Durability:</span> Properly installed pavers can last 25-50 years or more, outperforming concrete and asphalt in the harsh Las Vegas climate.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Low Maintenance:</span> Pavers require minimal upkeep and can be individually replaced if damaged, unlike concrete which often requires complete section replacement.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Design Flexibility:</span> Available in countless shapes, sizes, colors, and textures, pavers allow for unlimited design possibilities and custom patterns.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Safety:</span> Paver surfaces provide better traction when wet compared to poured concrete, making them safer around pools and in areas with frequent foot traffic.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Weather Resistance:</span> Pavers handle the extreme temperature fluctuations of Las Vegas better than concrete, with significantly less cracking and heaving.
+              </div>
+            </li>
+          </ul>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Our Paver Installation Services</h3>
+          <p class="text-lg mb-6">
+            At Discount Landscaper LV, we offer comprehensive paver installation services tailored to your specific needs and property characteristics.
+          </p>
+          
+          <div class="space-y-8 mt-8">
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">Custom Patterns</h4>
+              <p>We work with you to design custom paver patterns that complement your home's architecture and landscape design. From traditional herringbone and basketweave to modern linear arrangements and custom inlays, we can create a unique look that reflects your personal style.</p>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">Quality Materials</h4>
+              <p>We use only premium paver products from trusted manufacturers, offering a wide selection of materials including concrete pavers, natural stone, porcelain, and clay brick. Our experts will help you select the right material for your specific application, considering factors like traffic, exposure, and aesthetic preferences.</p>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">Proper Drainage</h4>
+              <p>Proper water management is critical in hardscape installation, especially in Las Vegas where occasional heavy rains can cause flooding. Our installation process includes careful grading and drainage planning to ensure water flows away from your home's foundation and prevents pooling on your paved surfaces.</p>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-semibold text-primary mb-2">Professional Installation</h4>
+              <p>Our installation process follows industry best practices to ensure a beautiful, long-lasting result:</p>
+              <ul class="list-disc pl-6 mt-2 space-y-2">
+                <li>Thorough site preparation and excavation</li>
+                <li>Installation of proper base materials and compaction</li>
+                <li>Precise paver cutting and placement</li>
+                <li>Edge restraints to prevent shifting</li>
+                <li>Joint sand application and compaction</li>
+                <li>Optional sealing for enhanced protection and color enhancement</li>
+              </ul>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Paver Applications We Specialize In:</h3>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Patios and Outdoor Living Areas:</span> Create beautiful, functional spaces for entertaining and relaxation.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Driveways:</span> Enhance your home's curb appeal with a durable, attractive paver driveway.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Walkways and Garden Paths:</span> Guide visitors through your landscape with charming paver pathways.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Pool Decks:</span> Create safe, attractive, non-slip surfaces around your pool area.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Outdoor Kitchens and Fire Pit Areas:</span> Build functional cooking and gathering spaces with durable paver surfaces.
+              </div>
+            </li>
+          </ul>
+          
+          <h3 class="text-2xl font-bold mt-12 mb-4">Why Choose Discount Landscaper LV for Your Paver Installation?</h3>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Experienced Craftsmen:</span> Our installation teams have years of experience and specialized training in paver installation techniques.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Attention to Detail:</span> We pride ourselves on meticulous installation practices that ensure your paver project will stand the test of time.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Comprehensive Service:</span> From initial design through final installation, we handle every aspect of your paver project with professionalism and care.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <span class="font-semibold">Quality Guarantee:</span> We stand behind our work with a comprehensive warranty on both materials and installation.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 bg-secondary/10">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {testimonials.map((testimonial) => (
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <svg class="h-10 w-10 text-primary mb-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            <p class="text-gray-700 mb-4 italic">{testimonial.text}</p>
+            <p class="font-semibold">{testimonial.author}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Outdoor Space with Beautiful Pavers?</h2>
+        <p class="text-xl mb-10">Contact us today to schedule a consultation and get a free estimate for your paver installation project.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button
+            text="Get a Free Quote"
+            href="/quote"
+            size="lg"
+            variant="primary"
+            ariaLabel="Get a free quote"
+          />
+          <Button
+            text="Contact Us"
+            href="/get-in-touch"
+            size="lg"
+            variant="outline"
+            ariaLabel="Contact us"
+            className="border-accent text-accent hover:bg-accent/10"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

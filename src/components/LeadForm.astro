@@ -1,0 +1,45 @@
+---
+export interface Props {
+  formId: string;
+  formName?: string;
+}
+
+const { formId, formName = "Quote Request Form" } = Astro.props;
+---
+
+<div class="lead-form-container">
+  <iframe
+    src="https://api.leadconnectorhq.com/widget/form/1e3V9ETIeQ7mf5c77JGC"
+    style="width:100%;height:100%;border:none;border-radius:0px"
+    id="inline-1e3V9ETIeQ7mf5c77JGC"
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Form 1"
+    data-height="767"
+    data-layout-iframe-id="inline-1e3V9ETIeQ7mf5c77JGC"
+    data-form-id="1e3V9ETIeQ7mf5c77JGC"
+    title="Form 1"
+    loading="lazy"
+    fetchpriority="low"
+  >
+  </iframe>
+  <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
+</div>
+
+<style>
+  .lead-form-container {
+    width: 100%;
+    height: 767px;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<link rel="preconnect" href="https://api.leadconnectorhq.com" crossorigin>
+<link rel="preconnect" href="https://link.msgsndr.com" crossorigin>
+<link rel="preload" href="https://link.msgsndr.com/js/form_embed.js" as="script">
